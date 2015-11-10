@@ -75,6 +75,7 @@ def split_off_quote_marks(tokens):
         i += 1
     return tokens
 
+
 def fix_semicolons(text):
     pattern = "([a-z]+;(t|s|m))[^a-z]"
     match = re.search(pattern, text)
