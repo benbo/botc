@@ -1,3 +1,4 @@
+import os
 import sys
 from optparse import OptionParser
 
@@ -48,6 +49,9 @@ def classify(data_filename, label_filename, feature_dir, list_of_features, model
              regularizer='l1', alpha=1.0, verbose=1):
 
     labels = pd.read_csv(label_filename, header=0, index_col=0)
+
+    if not os.path.exists(feature_dir):
+        os.makedirs(feature_dir)
 
     # for each feature in feature_list:
     items = None
